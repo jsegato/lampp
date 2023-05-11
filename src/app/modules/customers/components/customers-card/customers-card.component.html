@@ -1,0 +1,10 @@
+<mat-card style="max-width: 350px;">
+    <div class="flex mb-2">
+        <div class="w-11/12 cursor-pointer" [routerLink]="['detalhes', customer.id]"><h3 class="text-xl">{{ customer.name }}</h3></div>
+        <div><mat-slide-toggle  [(ngModel)]="isChecked"></mat-slide-toggle></div>
+    </div>
+    <mat-card-content class="cursor-pointer" [routerLink]="['detalhes', customer.id]">
+        <p class="mb-2">{{ customer.phone }}</p>
+        <p>{{ customer.address.city }} - {{ customer.address.state }}</p>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,65 @@
+<div class="w-full mb-4">
+    <header class="bg-gray-100 p-4">
+        <h1 class="text-3xl">Cadastrar Cliente</h1>
+    </header>
+
+    <main class="sm:flex my-6 justify-center">
+        <div id="customer" [hidden]="step !== 1">
+            <mat-card class="mat-elevation-z8">
+                <mat-card-content>
+                    <h4 class="text-lg mb-2">Dados Cadastrais</h4>
+                    <form [formGroup]="form">
+
+                        <mat-form-field class="w-full">
+                            <mat-label>Nome</mat-label>
+                            <input matInput formControlName="name">
+                            <mat-error *ngIf="form.get('name')?.invalid">Informe o nome do cliente.</mat-error>
+                        </mat-form-field>
+
+                        <div class="grid grid-cols-1 gap-3 md:grid-cols-2">
+                            <mat-form-field>
+                                <mat-label>Fone</mat-label>
+                                <input matInput formControlName="phone" mask="(00) 0 0000-0000">
+                                <mat-error *ngIf="form.get('phone')?.invalid">Informe um telefone válido.</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <mat-label>E-mail</mat-label>
+                                <input type="email" matInput formControlName="email">
+                                <mat-error *ngIf="form.get('email')?.invalid">Informe um e-mail válido.</mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="grid grid-cols-1 gap-3 md:grid-cols-2">
+                            <mat-form-field>
+                                <mat-label>CPF</mat-label>
+                                <input matInput formControlName="document" mask="000.000.000-00">
+                                <mat-error *ngIf="form.get('document')?.invalid">Informe um CPF válido.</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <mat-label>Data de Nascimento</mat-label>
+                                <input type="date" matInput formControlName="dateBirth">
+                                <mat-error *ngIf="form.get('dateBirth')?.invalid">Informe a data de
+                                    nascimento.</mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="flex gap-3 justify-center mt-4">
+                            <button type="button"
+                                class="bg-gray-200 border border-gray-300 hover:bg-gray-300 rounded-lg w-48 py-1"
+                                (click)="location.back()">Voltar</button>
+                            <button type="submit"
+                                class="bg-green-400 border border-green-500 hover:bg-green-600 rounded-lg w-48 py-1 text-white"
+                                (click)="next()">Próximo</button>
+                        </div>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+        <div id="address" [hidden]="step !== 2">
+            <app-address-form (backEvent)="back()" (saveAddress)="saveAddress($event)"></app-address-form>
+        </div>
+    </main>
+</div>

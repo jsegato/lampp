@@ -1,0 +1,19 @@
+<div class="w-full">
+    <header class="bg-gray-100 p-4">
+        <h1 class="text-3xl">Clientes</h1>
+    </header>
+    <main class="p-4">
+        <div class="flex flex-wrap justify-end items-center">
+            <mat-form-field class="w-full sm:w-64">
+                <mat-label>Buscar por nome ou cidade</mat-label>
+                <input matInput placeholder="Ex. João">
+                <mat-icon matSuffix class="text-gray-400">search</mat-icon>
+            </mat-form-field>
+            <div class="mb-3">
+                <button class="bg-green-500 border border-green-500 hover:bg-green-600 rounded-lg w-48 py-1 ml-3 text-white" routerLink="cadastrar">Cadastrar Cliente</button>
+            </div>
+        </div>
+        <hr class="mb-4">
+        <app-customers-card [customer]="customer"></app-customers-card>
+    </main>
+</div>
