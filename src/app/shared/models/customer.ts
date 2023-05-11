@@ -9,5 +9,5 @@ export interface Customer {
     document: string;
     dateBirth: string;
     active: boolean;
-    address: Address;
+    address: Address[];
 }

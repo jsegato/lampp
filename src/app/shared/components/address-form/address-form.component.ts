@@ -1,7 +1,10 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 
+import { States } from '../../models/states';
 import { Address } from '../../models/address';
+import { StatesService } from '../../services/states.service';
 
+import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { NgxMaskModule } from 'ngx-mask';
 import { MatCardModule } from '@angular/material/card';
@@ -26,18 +29,19 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
     ReactiveFormsModule
   ]
 })
-export class AddressFormComponent implements OnInit {
+export class AddressFormComponent implements OnInit, OnDestroy {
   @Output() backEvent = new EventEmitter<boolean>();
   @Output() saveAddress = new EventEmitter<Address>();
 
   form: FormGroup;
+  states: States[];
+  subscriptions = new Subscription();
 
-  states = [
-    { description: 'Acre', value: 'AC' }
-  ]
-
-
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private statesServices: StatesService
+  ) {
+    this.states = [];
     this.form = this.formBuilder.group({
       id: [null],
       zipcode: [null, [Validators.required]],
@@ -52,14 +56,29 @@ export class AddressFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getStates();
   }
 
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
+  }
 
-  back() {
+  getStates(): void {
+    this.statesServices.getAll().subscribe({
+      next: (states) => {
+        this.states = states;
+      },
+      error: (error) => {
+        console.error(error);
+      }
+    });
+  }
+
+  back(): void {
     this.backEvent.emit(true);
   }
 
-  submit() {
+  submit(): void {
     if (this.form.valid) {
       const address = this.form.value as Address;
       this.saveAddress.emit(address);

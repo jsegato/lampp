@@ -53,8 +53,8 @@
                     <mat-form-field class="w-full">
                         <mat-label>Estado</mat-label>
                         <mat-select formControlName="state">
-                            <mat-option *ngFor="let state of states" [value]="state.value">
-                                {{ state.description }}
+                            <mat-option *ngFor="let state of states" [value]="state.abbreviation">
+                                {{ state.name }}
                             </mat-option>
                         </mat-select>
                         <mat-error *ngIf="form.get('state')?.invalid">Informe o estado.</mat-error>
@@ -63,7 +63,7 @@
 
                 <mat-form-field appearance="fill" class="w-full">
                     <mat-label>Ponto de referência</mat-label>
-                    <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="3"
+                    <textarea matInput formControlName="referencePoint" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="3"
                         cdkAutosizeMaxRows="5">
                 </textarea>
                 </mat-form-field>

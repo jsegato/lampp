@@ -7,6 +7,9 @@ import { NgxMaskModule } from 'ngx-mask';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { HttpClientModule } from '@angular/common/http';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { AddressFormComponent } from '../../shared/components/address-form/address-form.component';
@@ -29,6 +32,9 @@ import { CustomersDetailComponent } from './components/customers-detail/customer
     MatCardModule,
     MatIconModule,
     MatInputModule,
+    MatSelectModule,
+    HttpClientModule,
+    MatCheckboxModule,
     ReactiveFormsModule,
     AddressFormComponent,
     MatSlideToggleModule,
