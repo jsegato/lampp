@@ -7,6 +7,7 @@ import { CustomersDetailComponent } from './components/customers-detail/customer
 const routes: Routes = [
   { path: '', component: CustomersListComponent },
   { path: 'cadastrar', component: CustomerFormComponent },
+  { path: 'editar/:id', component: CustomerFormComponent },
   { path: 'detalhes/:id', component: CustomersDetailComponent }
 ];
 

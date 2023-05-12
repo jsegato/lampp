@@ -17,13 +17,18 @@ export class CustomerService {
     return this.httpClient.post<Customer>(url, customer);
   }
 
+  update(id: number, customer: Customer): Observable<Customer> {
+    const url = `${environment.API}/customers/${id}`;
+    return this.httpClient.put<Customer>(url, customer);
+  }
+
   getAll(search: string | null, inactive: boolean): Observable<Customer[]> {
     let params = new HttpParams()
     .set('active', !inactive);
     if (search) {
       params = params.append('name_like', search);
     }
-    const url = `${environment.API}/customers?_embed=address`;
+    const url = `${environment.API}/customers?_embed=address&_sort=name&_limit=20`;
     return this.httpClient.get<Customer[]>(url, { params: params });
   }
 

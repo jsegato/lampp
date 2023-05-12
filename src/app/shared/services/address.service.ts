@@ -16,6 +16,11 @@ export class AddressService {
     return this.httpClient.post<Address>(url, address);
   }
 
+  update(id: number, address: Address): Observable<Address> {
+    const url = `${environment.API}/address/${id}`;
+    return this.httpClient.put<Address>(url, address);
+  }
+
   getAddres(id: number): Observable<Address> {
     const url = `${environment.API}/address/${id}`;
     return this.httpClient.get<Address>(url);

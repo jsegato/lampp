@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy, Output, EventEmitter } from '@angular/core';
 
 import { States } from '../../models/states';
 import { Address } from '../../models/address';
@@ -31,6 +31,7 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
   ]
 })
 export class AddressFormComponent implements OnInit, OnDestroy {
+  @Input() address: Address;
   @Output() backEvent = new EventEmitter<boolean>();
   @Output() saveAddress = new EventEmitter<Address>();
 
@@ -44,6 +45,7 @@ export class AddressFormComponent implements OnInit, OnDestroy {
     private statesServices: StatesService
   ) {
     this.states = [];
+    this.address = {} as Address;
     this.form = this.formBuilder.group({
       id: [null],
       zipcode: [null, [Validators.required]],
@@ -59,6 +61,10 @@ export class AddressFormComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.getStates();
+    console.log(this.address)
+    if (this.address.zipcode) {
+      this.form.patchValue(this.address);
+    }
   }
 
   ngOnDestroy(): void {

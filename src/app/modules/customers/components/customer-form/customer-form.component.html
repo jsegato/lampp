@@ -67,7 +67,8 @@
         </div>
 
         <div id="address" [hidden]="step !== 2">
-            <app-address-form (backEvent)="back()" (saveAddress)="save($event)"></app-address-form>
+            <app-address-form *ngIf="form.valid" (backEvent)="back()" [address]="address"
+                (saveAddress)="save($event)"></app-address-form>
         </div>
     </main>
 </div>

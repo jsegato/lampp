@@ -4,7 +4,10 @@
     </header>
     <main class="sm:flex sm:flex-wrap justify-center">
         <mat-card class="mat-elevation-z4 my-4 sm:w-96">
-            <h3 class="text-xl mb-3">{{ customer.name }}</h3>
+            <div class="flex justify-between">
+                <h3 class="text-xl mb-3">{{ customer.name }}</h3>
+                <mat-icon class="text-green-600 cursor-pointer" [routerLink]="['/clientes/editar', customer.id]">edit</mat-icon>
+            </div>
             <mat-card-content>
                 <p class="mb-2"><b>Fone:</b> {{ customer.phone | mask: '(00) 0 0000-0000' }}</p>
                 <p class="mb-2"><b>E-mail:</b> {{ customer.email }}</p>
