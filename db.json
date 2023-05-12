@@ -4,12 +4,11 @@
       "id": 1,
       "name": "Jussie Segato",
       "email": "jussie.segato@gmail.com",
-      "gender": "Masculino",
       "phone": "54991798138",
-      "document": "01087262088",
+      "document": "01087262099",
       "dateBirth": "1985-02-15",
-      "active": true,
-      "addressId": 1
+      "gender": "Masculino",
+      "active": true
     },
     {
       "id": 2,
@@ -22,7 +21,7 @@
       "active": false
     },
     {
-      "active": true,
+      "active": false,
       "dateBirth": "1952-07-28",
       "document": "01087262070",
       "email": "jussie.segato@gmail.com",
@@ -31,7 +30,7 @@
       "id": 4
     },
     {
-      "active": true,
+      "active": false,
       "dateBirth": "1952-07-28",
       "document": "01087262070",
       "email": "jussie.segato@gmail.com",
@@ -58,14 +57,14 @@
       "id": 7
     },
     {
+      "id": 8,
       "name": "Jenoveva Canal Dobner",
       "email": "jenoveva.dobner@gmail.com",
       "phone": "77777777777",
       "document": "88888888888",
       "dateBirth": "1950-04-15",
       "gender": "Feminino",
-      "active": true,
-      "id": 8
+      "active": true
     },
     {
       "name": "Joaozinho",
@@ -88,14 +87,14 @@
       "id": 10
     },
     {
-      "name": "Ademir Jose Segato",
+      "id": 11,
+      "name": "Ademir José Segato",
       "email": "ademir.segato@gmail.com",
       "phone": "54999889999",
       "document": "30864674015",
       "dateBirth": "1952-07-28",
       "gender": "Masculino",
-      "active": true,
-      "id": 11
+      "active": true
     },
     {
       "name": "Jean Rodrigues",
@@ -106,6 +105,16 @@
       "gender": "Masculino",
       "active": true,
       "id": 12
+    },
+    {
+      "id": 13,
+      "name": "Marcelo Testa",
+      "email": "marcelo.testa@gmail.com",
+      "phone": "54555567777",
+      "document": "99888888888",
+      "dateBirth": "1985-02-15",
+      "gender": "Masculino",
+      "active": true
     }
   ],
   "address": [
@@ -114,11 +123,11 @@
       "zipcode": "95110456",
       "street": "Rua Domingos Victorio Cavion",
       "number": "213",
-      "complement": "Casa",
+      "complement": "Casa - Frente",
       "neighborhood": "Desvio Rizzo",
       "city": "Caxias do Sul",
       "state": "RS",
-      "referencePoint": null,
+      "referencePoint": "Próximo ao mercado da família",
       "customerId": 1
     },
     {
@@ -192,6 +201,18 @@
       "state": "RS",
       "referencePoint": "Próximo ao Andreazza",
       "customerId": 12
+    },
+    {
+      "id": 8,
+      "zipcode": "95700099",
+      "street": "Rua Sem Nome",
+      "number": "213",
+      "complement": "Casa",
+      "neighborhood": "Rural",
+      "city": "Sananduva",
+      "state": "RS",
+      "referencePoint": "Próximo a escola",
+      "customerId": 13
     }
   ],
   "states": [
