@@ -2,7 +2,7 @@ import { Location } from '@angular/common';
 
 import { Subscription } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { Address } from '../../../../shared/models/address';
@@ -16,7 +16,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
   templateUrl: './customer-form.component.html',
   styleUrls: ['./customer-form.component.scss']
 })
-export class CustomerFormComponent implements OnDestroy {
+export class CustomerFormComponent implements OnDestroy, OnInit {
 
   step = 1;
   update = false;
@@ -49,17 +49,18 @@ export class CustomerFormComponent implements OnDestroy {
   }
 
   ngOnInit() {
-    this.subscriptions.add(this.activateRoute.paramMap.subscribe(
-      {
-        next: (params: ParamMap) => {
-          if (params.has('id')) {
-            const id = Number(params.get('id'));
-            if (!isNaN(id)) {
-              this.getCustomer(id);
+    this.subscriptions.add(
+      this.activateRoute.paramMap.subscribe(
+        {
+          next: (params: ParamMap) => {
+            if (params.has('id')) {
+              const id = Number(params.get('id'));
+              if (!isNaN(id)) {
+                this.getCustomer(id);
+              }
             }
           }
-        }
-      }));
+        }));
   }
 
   ngOnDestroy(): void {
