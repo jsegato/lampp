@@ -6,6 +6,7 @@ import { StatesService } from '../../services/states.service';
 
 import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { ToastrService } from 'ngx-toastr';
 import { NgxMaskModule } from 'ngx-mask';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
@@ -38,6 +39,7 @@ export class AddressFormComponent implements OnInit, OnDestroy {
   subscriptions = new Subscription();
 
   constructor(
+    private toastr: ToastrService,
     private formBuilder: FormBuilder,
     private statesServices: StatesService
   ) {
@@ -64,14 +66,16 @@ export class AddressFormComponent implements OnInit, OnDestroy {
   }
 
   getStates(): void {
-    this.statesServices.getAll().subscribe({
-      next: (states) => {
-        this.states = states;
-      },
-      error: (error) => {
-        console.error(error);
-      }
-    });
+    this.subscriptions.add(
+      this.statesServices.getAll().subscribe({
+        next: (states) => {
+          this.states = states;
+        },
+        error: (error) => {
+          this.toastr.error('Falha ao obter a lista de estados.');
+          console.error(error);
+        }
+      }));
   }
 
   back(): void {
