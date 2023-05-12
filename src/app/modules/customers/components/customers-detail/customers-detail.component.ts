@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
 
 import { Subscription } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
@@ -20,6 +21,7 @@ export class CustomersDetailComponent implements OnInit, OnDestroy {
 
   constructor(
     public location: Location,
+    private toastr: ToastrService,
     private activateRoute: ActivatedRoute,
     private customerService: CustomerService
 
@@ -57,6 +59,7 @@ export class CustomersDetailComponent implements OnInit, OnDestroy {
           }
         },
         error: (error) => {
+          this.toastr.error('Falha obter os dados cadastrais do cliente.');
           console.error(error);
         }
       }));

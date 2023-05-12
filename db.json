@@ -11,43 +11,6 @@
       "active": true
     },
     {
-      "id": 2,
-      "name": "Alexandre Dobner",
-      "email": "alexandre.dobner@gmail.com",
-      "gender": "Masculino",
-      "phone": "54991798139",
-      "document": "01087262089",
-      "dateBirth": "1977-02-19",
-      "active": false
-    },
-    {
-      "active": false,
-      "dateBirth": "1952-07-28",
-      "document": "01087262070",
-      "email": "jussie.segato@gmail.com",
-      "name": "Ademir Jose Segato",
-      "phone": "54991798138",
-      "id": 4
-    },
-    {
-      "active": false,
-      "dateBirth": "1952-07-28",
-      "document": "01087262070",
-      "email": "jussie.segato@gmail.com",
-      "name": "Ademir Jose Segato",
-      "phone": "54991798138",
-      "id": 5
-    },
-    {
-      "name": "Joceli Tonial Segato",
-      "email": "joceli.segato@gmail.com",
-      "phone": "54991798138",
-      "document": "01087262070",
-      "dateBirth": "1953-07-28",
-      "active": true,
-      "id": 6
-    },
-    {
       "name": "Mozara Segato",
       "email": "mozara.segato@gmail.com",
       "phone": "54888888888",
@@ -83,7 +46,7 @@
       "document": "78768999900",
       "dateBirth": "1988-02-15",
       "gender": "Masculino",
-      "active": true,
+      "active": false,
       "id": 10
     },
     {
@@ -97,14 +60,14 @@
       "active": true
     },
     {
+      "id": 12,
       "name": "Jean Rodrigues",
       "email": "jean.rodrigues@gmail.com",
       "phone": "55555555555",
       "document": "88903333000",
       "dateBirth": "1985-03-28",
       "gender": "Masculino",
-      "active": true,
-      "id": 12
+      "active": true
     },
     {
       "id": 13,
@@ -113,6 +76,26 @@
       "phone": "54555567777",
       "document": "99888888888",
       "dateBirth": "1985-02-15",
+      "gender": "Masculino",
+      "active": true
+    },
+    {
+      "id": 14,
+      "name": "Alexandre Dobner",
+      "email": "alexandre.dobner@gmail.com",
+      "phone": "54988788778",
+      "document": "77690988353",
+      "dateBirth": "1988-02-19",
+      "gender": "Masculino",
+      "active": true
+    },
+    {
+      "id": 15,
+      "name": "Marcos Teste",
+      "email": "marcos.testa@gmail.com",
+      "phone": "65669988988",
+      "document": "97769300999",
+      "dateBirth": "1983-07-29",
       "gender": "Masculino",
       "active": true
     }
@@ -149,8 +132,8 @@
       "number": "213",
       "complement": null,
       "neighborhood": "Desvio rizzo",
-      "city": "Caxias do Sul",
-      "state": "AC",
+      "city": "Farroupilha",
+      "state": "RS",
       "referencePoint": null,
       "customerId": 8
     },
@@ -186,7 +169,7 @@
       "complement": "Casa  -  Fundos",
       "neighborhood": "Desvio Rizzo",
       "city": "Caxias do Sul",
-      "state": "AC",
+      "state": "RS",
       "referencePoint": "Atrás da Ferragem Debastiani",
       "customerId": 11
     },
@@ -213,6 +196,30 @@
       "state": "RS",
       "referencePoint": "Próximo a escola",
       "customerId": 13
+    },
+    {
+      "id": 9,
+      "zipcode": "85878878",
+      "street": "Rua X",
+      "number": "299",
+      "complement": "Apto 303",
+      "neighborhood": "Centro",
+      "city": "Porto Alegre",
+      "state": "RS",
+      "referencePoint": null,
+      "customerId": 14
+    },
+    {
+      "id": 10,
+      "zipcode": "95998999",
+      "street": "Rua Y",
+      "number": "999",
+      "complement": null,
+      "neighborhood": "Centro",
+      "city": "Florianopolis",
+      "state": "SC",
+      "referencePoint": null,
+      "customerId": 15
     }
   ],
   "states": [
